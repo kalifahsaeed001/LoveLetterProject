@@ -1,0 +1,798 @@
+/* ==========================================
+   YUSRAH LOVE LETTER
+   STYLE.CSS
+   PART 1
+========================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#090909,#160016,#300030,#090909);
+background-size:400% 400%;
+animation:bgMove 20s ease infinite;
+overflow-x:hidden;
+min-height:100vh;
+color:#fff;
+position:relative;
+}
+
+@keyframes bgMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* ==========================
+BACKGROUND
+========================== */
+
+.background{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+overflow:hidden;
+z-index:-2;
+}
+
+.circle{
+position:absolute;
+border-radius:50%;
+filter:blur(80px);
+opacity:.35;
+animation:floatCircle 18s infinite alternate ease-in-out;
+}
+
+.c1{
+width:300px;
+height:300px;
+background:#ff0088;
+left:-80px;
+top:-60px;
+}
+
+.c2{
+width:280px;
+height:280px;
+background:#00d4ff;
+right:-80px;
+top:120px;
+}
+
+.c3{
+width:260px;
+height:260px;
+background:#ff6600;
+left:25%;
+bottom:-120px;
+}
+
+.c4{
+width:340px;
+height:340px;
+background:#a855f7;
+right:15%;
+bottom:-150px;
+}
+
+@keyframes floatCircle{
+
+from{
+transform:translateY(0) scale(1);
+}
+
+to{
+transform:translateY(-40px) scale(1.15);
+}
+
+}
+
+/* ==========================
+INTRO SCREEN
+========================== */
+
+#introScreen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:25px;
+background:
+linear-gradient(rgba(0,0,0,.75),
+rgba(30,0,30,.88));
+z-index:99999;
+}
+
+.introTitle{
+font-size:3rem;
+font-family:'Great Vibes',cursive;
+color:#ff8bd7;
+text-shadow:
+0 0 10px hotpink,
+0 0 20px deeppink,
+0 0 45px crimson;
+animation:titleGlow 2s infinite alternate;
+}
+
+.introText{
+margin-top:20px;
+font-size:1.15rem;
+max-width:650px;
+line-height:1.8;
+color:#ffe4f3;
+}
+
+.introHeart{
+font-size:90px;
+margin:35px 0;
+animation:beatIntro 1s infinite;
+}
+
+@keyframes beatIntro{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.3);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+@keyframes titleGlow{
+
+from{
+text-shadow:
+0 0 10px hotpink;
+}
+
+to{
+text-shadow:
+0 0 20px hotpink,
+0 0 45px deeppink,
+0 0 70px crimson;
+}
+
+}
+
+.fadeOut{
+animation:fadeOut 1.5s forwards;
+}
+
+@keyframes fadeOut{
+
+to{
+opacity:0;
+visibility:hidden;
+}
+
+}
+
+/* ==========================
+MAIN CONTAINER
+========================== */
+
+.container{
+width:min(92%,900px);
+margin:70px auto;
+padding:35px;
+border-radius:25px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.15);
+box-shadow:
+0 0 40px rgba(255,0,128,.25);
+text-align:center;
+}
+
+.title{
+font-family:'Great Vibes',cursive;
+font-size:3.2rem;
+color:#ff7bc8;
+margin-bottom:10px;
+}
+
+.subtitle{
+color:#ffe3ef;
+font-size:1.1rem;
+margin-bottom:35px;
+}
+
+/* ==========================
+TIMER
+========================== */
+
+.timerCard{
+background:rgba(255,255,255,.08);
+padding:20px;
+border-radius:20px;
+margin-bottom:30px;
+border:1px solid rgba(255,255,255,.12);
+box-shadow:0 0 20px rgba(255,0,120,.2);
+}
+
+.timerCard h2{
+font-size:1.4rem;
+margin-bottom:12px;
+color:#ffb5df;
+}
+
+#timer{
+font-size:1.15rem;
+font-weight:bold;
+color:#ffffff;
+}
+
+/* ==========================
+BUTTONS
+========================== */
+
+.buttonGroup{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:18px;
+margin:30px 0;
+}
+
+button{
+padding:16px 32px;
+border:none;
+border-radius:60px;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+color:#fff;
+background:
+linear-gradient(45deg,#ff0080,#ff5f9f,#ff0080);
+background-size:300% 300%;
+transition:.35s;
+animation:buttonGradient 6s linear infinite;
+box-shadow:
+0 0 20px rgba(255,0,140,.45);
+}
+
+button:hover{
+transform:translateY(-5px) scale(1.05);
+box-shadow:
+0 0 35px hotpink;
+}
+
+@keyframes buttonGradient{
+
+0%{
+background-position:0%;
+}
+
+100%{
+background-position:300%;
+}
+
+}
+
+.hidden{
+display:none;
+}
+/* ==========================================
+   LOVE LETTER
+========================================== */
+
+#letter{
+margin-top:30px;
+padding:30px;
+border-radius:25px;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+box-shadow:0 0 35px rgba(255,0,140,.25);
+animation:fadeLetter 1s ease;
+}
+
+#letter h2{
+font-family:'Great Vibes',cursive;
+font-size:2.5rem;
+color:#ff9bd8;
+margin-bottom:20px;
+}
+
+#typing{
+font-size:1.15rem;
+line-height:2;
+white-space:pre-wrap;
+color:#fff8fc;
+min-height:180px;
+text-align:left;
+}
+
+@keyframes fadeLetter{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ==========================================
+GIFT BOX
+========================================== */
+
+#giftBox{
+margin:30px auto;
+width:120px;
+height:120px;
+border-radius:25px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-size:55px;
+cursor:pointer;
+background:rgba(255,255,255,.08);
+border:2px solid hotpink;
+box-shadow:0 0 25px hotpink;
+transition:.4s;
+}
+
+#giftBox:hover{
+transform:scale(1.12) rotate(-5deg);
+box-shadow:0 0 45px deeppink;
+}
+
+#giftBox p{
+font-size:.95rem;
+margin-top:10px;
+color:#fff;
+}
+
+/* ==========================================
+ENVELOPE
+========================================== */
+
+#envelope{
+margin:30px auto;
+width:120px;
+height:120px;
+border-radius:25px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-size:52px;
+cursor:pointer;
+background:rgba(255,255,255,.08);
+border:2px solid #ffd700;
+box-shadow:0 0 25px gold;
+transition:.4s;
+}
+
+#envelope:hover{
+transform:scale(1.1);
+box-shadow:0 0 45px gold;
+}
+
+#envelope p{
+margin-top:10px;
+font-size:.95rem;
+}
+
+/* ==========================================
+SPECIAL MESSAGE
+========================================== */
+
+#specialMessage{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+width:min(90%,650px);
+padding:35px;
+border-radius:25px;
+background:rgba(20,0,20,.95);
+border:2px solid hotpink;
+box-shadow:0 0 60px hotpink;
+text-align:center;
+z-index:99999;
+}
+
+#specialMessage h2{
+font-family:'Great Vibes',cursive;
+font-size:2.6rem;
+margin-bottom:20px;
+color:#ff8fd6;
+}
+
+#specialMessage p{
+font-size:1.1rem;
+line-height:2;
+color:#fff;
+margin-bottom:25px;
+}
+
+#closeMessage{
+background:linear-gradient(45deg,#ff0080,#ff4d94);
+}
+
+/* ==========================================
+PHOTO GALLERY
+========================================== */
+
+#gallery{
+margin-top:40px;
+text-align:center;
+}
+
+.photos{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.photo{
+width:140px;
+height:140px;
+overflow:hidden;
+border-radius:50%;
+border:4px solid hotpink;
+box-shadow:0 0 30px hotpink;
+animation:photoGlow 3s infinite;
+}
+
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+@keyframes photoGlow{
+
+0%{
+transform:scale(1);
+box-shadow:0 0 20px hotpink;
+}
+
+50%{
+transform:scale(1.08);
+box-shadow:0 0 45px deeppink;
+}
+
+100%{
+transform:scale(1);
+box-shadow:0 0 20px hotpink;
+}
+
+}
+
+/* ==========================================
+MUSIC BUTTON
+========================================== */
+
+#musicButton{
+position:fixed;
+top:20px;
+left:20px;
+padding:14px 20px;
+border-radius:50px;
+font-size:15px;
+font-weight:bold;
+background:linear-gradient(45deg,#8a2be2,#ff1493);
+color:white;
+border:none;
+cursor:pointer;
+box-shadow:0 0 25px rgba(255,20,147,.5);
+z-index:9999;
+transition:.3s;
+}
+
+#musicButton:hover{
+transform:scale(1.08);
+box-shadow:0 0 40px hotpink;
+}
+/* ==========================================
+   FLOATING HEARTS
+========================================== */
+
+.hearts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:-1;
+}
+
+@keyframes floatHeart{
+0%{
+transform:translateY(0) scale(1);
+opacity:1;
+}
+100%{
+transform:translateY(-110vh) rotate(360deg) scale(1.8);
+opacity:0;
+}
+}
+
+/* ==========================================
+ROSES
+========================================== */
+
+.rose{
+position:fixed;
+top:-50px;
+font-size:30px;
+pointer-events:none;
+z-index:999;
+animation:fallRose linear forwards;
+}
+
+@keyframes fallRose{
+0%{
+transform:translateY(-60px) rotate(0deg);
+opacity:1;
+}
+100%{
+transform:translateY(120vh) rotate(720deg);
+opacity:0;
+}
+}
+
+/* ==========================================
+CHERRY BLOSSOMS
+========================================== */
+
+.petal{
+position:fixed;
+top:-40px;
+font-size:24px;
+pointer-events:none;
+z-index:998;
+animation:petalFall linear forwards;
+}
+
+@keyframes petalFall{
+0%{
+transform:translateY(-50px) rotate(0deg);
+opacity:1;
+}
+100%{
+transform:translateY(120vh) translateX(120px) rotate(540deg);
+opacity:0;
+}
+}
+
+/* ==========================================
+SPARKLES
+========================================== */
+
+.sparkle{
+position:fixed;
+pointer-events:none;
+font-size:18px;
+animation:sparkleAnim 2s linear forwards;
+}
+
+@keyframes sparkleAnim{
+0%{
+opacity:1;
+transform:scale(0.5);
+}
+100%{
+opacity:0;
+transform:scale(1.8);
+}
+}
+
+/* ==========================================
+BUTTERFLIES
+========================================== */
+
+.butterfly{
+position:fixed;
+font-size:28px;
+pointer-events:none;
+animation:flyButterfly 12s linear forwards;
+}
+
+@keyframes flyButterfly{
+0%{
+transform:translateX(-60px);
+opacity:1;
+}
+100%{
+transform:translateX(120vw);
+opacity:.8;
+}
+}
+
+/* ==========================================
+SHOOTING STARS
+========================================== */
+
+.shooting-star{
+position:fixed;
+font-size:22px;
+pointer-events:none;
+animation:shootStar 2.5s linear forwards;
+}
+
+@keyframes shootStar{
+0%{
+transform:translate(0,0);
+opacity:1;
+}
+100%{
+transform:translate(-350px,700px);
+opacity:0;
+}
+}
+
+/* ==========================================
+BEATING HEART
+========================================== */
+
+.beat-heart{
+position:fixed;
+bottom:25px;
+right:25px;
+font-size:55px;
+animation:beatHeart 1s infinite;
+z-index:9999;
+}
+
+@keyframes beatHeart{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.3);
+}
+100%{
+transform:scale(1);
+}
+}
+
+/* ==========================================
+SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#120012;
+}
+
+::-webkit-scrollbar-thumb{
+background:hotpink;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+background:deeppink;
+}
+
+/* ==========================================
+RESPONSIVE
+========================================== */
+
+@media (max-width:768px){
+
+.title{
+font-size:2.4rem;
+}
+
+.introTitle{
+font-size:2.2rem;
+}
+
+.introHeart{
+font-size:70px;
+}
+
+.container{
+width:95%;
+padding:20px;
+}
+
+.buttonGroup{
+flex-direction:column;
+align-items:center;
+}
+
+button{
+width:100%;
+max-width:320px;
+}
+
+.photo{
+width:110px;
+height:110px;
+}
+
+#giftBox,
+#envelope{
+width:100px;
+height:100px;
+font-size:45px;
+}
+
+#specialMessage{
+width:94%;
+padding:25px;
+}
+
+#typing{
+font-size:1rem;
+line-height:1.8;
+}
+
+}
+
+/* ==========================================
+FINAL GLOW
+========================================== */
+
+body::after{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+background:
+radial-gradient(circle at center,
+rgba(255,105,180,.08),
+transparent 70%);
+animation:ambientGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes ambientGlow{
+from{
+opacity:.3;
+}
+to{
+opacity:.8;
+}
+}
+

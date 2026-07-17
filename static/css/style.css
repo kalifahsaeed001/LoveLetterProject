@@ -1,0 +1,796 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(
+        135deg,
+        #050816,
+        #120024,
+        #240046,
+        #3c096c
+    );
+    background-size:400% 400%;
+    animation:bgMove 15s infinite alternate;
+}
+
+/* ========================================= */
+
+@keyframes bgMove{
+
+0%{
+background-position:left;
+}
+
+100%{
+background-position:right;
+}
+
+}
+
+/* ========================================= */
+
+.container{
+
+text-align:center;
+
+padding:40px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(10px);
+
+box-shadow:0 0 40px rgba(255,0,120,.3);
+
+z-index:5;
+
+}
+
+/* ========================================= */
+
+.title{
+
+font-size:55px;
+
+color:white;
+
+font-weight:bold;
+
+animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+
+text-shadow:
+0 0 10px hotpink,
+0 0 20px deeppink;
+
+}
+
+to{
+
+text-shadow:
+0 0 20px white,
+0 0 40px hotpink,
+0 0 80px deeppink;
+
+}
+
+}
+
+/* ========================================= */
+
+.name{
+
+margin-top:15px;
+
+font-size:52px;
+
+font-weight:bold;
+
+letter-spacing:4px;
+
+background:linear-gradient(
+90deg,
+#ff0080,
+#ff66cc,
+#ffffff,
+#ff66cc,
+#ff0080
+);
+
+background-size:300%;
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+animation:nameGlow 3s linear infinite;
+
+}
+
+@keyframes nameGlow{
+
+0%{
+
+background-position:0%;
+
+transform:scale(1);
+
+}
+
+50%{
+
+background-position:100%;
+
+transform:scale(1.05);
+
+}
+
+100%{
+
+background-position:0%;
+
+transform:scale(1);
+
+}
+
+}
+
+/* ========================================= */
+
+.subtitle{
+
+margin-top:15px;
+
+font-size:22px;
+
+color:white;
+
+}
+
+/* ========================================= */
+
+button{
+
+margin-top:30px;
+
+padding:18px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(
+45deg,
+hotpink,
+deeppink
+);
+
+font-size:20px;
+
+color:white;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:0 0 25px hotpink;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+0 0 30px deeppink,
+0 0 70px hotpink;
+
+}
+
+/* ========================================= */
+
+.hidden{
+
+display:none;
+
+}
+
+#letter{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.7);
+
+z-index:100;
+
+}
+
+.letter-box{
+
+width:90%;
+
+max-width:700px;
+
+background:white;
+
+padding:35px;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 0 40px hotpink;
+
+}
+
+.letter-box h2{
+
+color:deeppink;
+
+font-size:35px;
+
+margin-bottom:20px;
+
+}
+
+#typing{
+
+font-size:22px;
+
+line-height:1.8;
+
+min-height:180px;
+
+}
+
+/* ========================================= */
+
+.hearts{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+}
+
+.hearts::before{
+
+content:"❤️ 💖 💕 💘 💗 ❤️ 💖 ❤️";
+
+position:absolute;
+
+width:100%;
+
+font-size:35px;
+
+animation:hearts 15s linear infinite;
+
+}
+
+@keyframes hearts{
+
+0%{
+
+transform:translateY(100vh);
+
+}
+
+100%{
+
+transform:translateY(-120vh);
+
+}
+
+}
+
+/* ========================================= */
+
+.stars{
+
+position:fixed;
+
+width:100%;
+
+height:100%;
+
+background-image:
+radial-gradient(white 1px,transparent 1px);
+
+background-size:45px 45px;
+
+opacity:.3;
+
+animation:stars 45s linear infinite;
+
+}
+
+@keyframes stars{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-400px);
+
+}
+
+}
+
+/* ========================================= */
+
+.rose{
+
+position:fixed;
+
+top:-50px;
+
+font-size:35px;
+
+pointer-events:none;
+
+z-index:9999;
+
+animation:fallRose linear forwards;
+
+}
+
+@keyframes fallRose{
+
+0%{
+
+transform:
+translateY(-60px)
+rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(110vh)
+rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+
+/* ========================================= */
+
+#giftBox{
+
+position:fixed;
+
+right:25px;
+
+top:25px;
+
+font-size:70px;
+
+cursor:pointer;
+
+animation:giftJump 2s infinite;
+
+z-index:9999;
+
+}
+
+@keyframes giftJump{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ========================================= */
+
+#loveTimer{
+
+position:fixed;
+
+left:20px;
+
+bottom:20px;
+
+padding:15px;
+
+border-radius:15px;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(10px);
+
+color:white;
+
+font-size:16px;
+
+box-shadow:0 0 15px hotpink;
+
+animation:pulseTimer 2s infinite;
+
+z-index:9999;
+
+}
+
+@keyframes pulseTimer{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.05);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* ========================================= */
+
+@keyframes beatHeart{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.3);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* ========================================= */
+
+@media(max-width:700px){
+
+.title{
+
+font-size:38px;
+
+}
+
+.name{
+
+font-size:40px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+}
+
+button{
+
+font-size:18px;
+
+padding:15px 28px;
+
+}
+
+#typing{
+
+font-size:18px;
+
+}
+
+}
+
+
+ /* =========================================
+   CHERRY BLOSSOM
+========================================= */
+
+.petal{
+
+position:fixed;
+
+top:-50px;
+
+font-size:24px;
+
+pointer-events:none;
+
+z-index:9998;
+
+animation:petalFall linear forwards;
+
+}
+
+@keyframes petalFall{
+
+0%{
+
+transform:
+translateY(-50px)
+rotate(0deg);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(110vh)
+rotate(720deg);
+
+opacity:0;
+
+}
+
+}
+
+ 
+/* ===========================
+ENVELOPE
+=========================== */
+
+#envelopeContainer{
+
+position:fixed;
+
+bottom:40px;
+
+right:40px;
+
+z-index:9999;
+
+}
+
+#envelope{
+
+font-size:70px;
+
+cursor:pointer;
+
+animation:envelopeFloat 2s infinite;
+
+transition:.3s;
+
+}
+
+#envelope:hover{
+
+transform:scale(1.15);
+
+}
+
+@keyframes envelopeFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+#specialMessage{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.75);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:10000;
+
+}
+
+.specialBox{
+
+width:90%;
+
+max-width:700px;
+
+padding:35px;
+
+background:white;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 0 40px hotpink;
+
+}
+
+.specialBox h2{
+
+color:deeppink;
+
+margin-bottom:20px;
+
+}
+
+.specialBox p{
+
+font-size:20px;
+
+line-height:1.8;
+
+}
+
+
+/* ===========================
+   INTRO SCREEN
+=========================== */
+
+#introScreen{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+135deg,
+#120024,
+#240046,
+#050816
+);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:opacity 1.5s ease;
+
+}
+
+.introTitle{
+
+color:white;
+
+font-size:60px;
+
+text-align:center;
+
+text-shadow:
+0 0 20px hotpink,
+0 0 50px deeppink;
+
+margin-bottom:20px;
+
+}
+
+.introText{
+
+color:white;
+
+font-size:24px;
+
+text-align:center;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
+}
+
+.fadeOut{
+
+opacity:0;
+
+pointer-events:none;
+
+}
+
+

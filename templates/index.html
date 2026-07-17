@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>❤️ Yusrah & Me ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- ===============================
+BACKGROUND EFFECTS
+=============================== -->
+
+<div class="background">
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+<div class="circle c4"></div>
+
+<div id="hearts"></div>
+
+<div id="sparkles"></div>
+
+<div id="stars"></div>
+
+</div>
+
+<!-- ===============================
+INTRO SCREEN
+=============================== -->
+
+<section id="introScreen">
+
+<div class="introBox">
+
+<h1 class="introTitle">
+❤️ Welcome My Dearest Yusrah ❤️
+</h1>
+
+<p class="introText">
+
+Every love story is beautiful...
+
+But ours is my favourite.
+
+Today I want to take you on a little journey through my heart.
+
+Every word...
+
+Every heartbeat...
+
+Every smile...
+
+Belongs to you.
+
+</p>
+
+<div class="introHeart">
+
+❤️
+
+</div>
+
+<button id="enterButton">
+
+Enter Our Love Story 💖
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ===============================
+MUSIC
+=============================== -->
+
+<audio id="music" loop>
+
+<source src="{{ url_for('static', filename='music.mp3') }}" type="audio/mpeg">
+
+</audio>
+
+<button id="musicButton">
+
+🎵 Play Music
+
+</button>
+
+<!-- ===============================
+MAIN CONTENT
+=============================== -->
+
+<div class="container hidden" id="mainContainer">
+
+<h1 class="title">
+
+❤️ My Beautiful Yusrah ❤️
+
+</h1>
+
+<p class="subtitle">
+
+A small world created only for you...
+
+</p>
+
+<!-- LOVE TIMER -->
+
+<div class="timerCard">
+
+<h2>
+
+⏳ Time We've Shared
+
+</h2>
+
+<div id="timer">
+
+Loading...
+
+</div>
+
+</div>
+
+<!-- LOVE LETTER -->
+
+<div id="letterCard">
+
+<h2>
+
+💌 My Letter To You
+
+</h2>
+
+<p id="typing"></p>
+
+</div>
+<!-- ==========================================
+GIFT SECTION
+========================================== -->
+
+<section class="card">
+
+<h2>🎁 A Special Gift For You</h2>
+
+<p>
+Every smile you give me is a gift.
+Tap the gift box to reveal a surprise.
+</p>
+
+<div id="giftBox">
+
+🎁
+
+</div>
+
+</section>
+
+<!-- ==========================================
+ENVELOPE
+========================================== -->
+
+<section class="card">
+
+<h2>💌 Secret Love Letter</h2>
+
+<p>
+
+A message that comes directly from my heart...
+
+</p>
+
+<div id="envelope">
+
+💌
+
+</div>
+
+</section>
+
+<!-- Hidden Message -->
+
+<div id="specialMessage" class="hidden">
+
+<div class="specialBox">
+
+<h2>
+
+❤️ My Dearest Yusrah ❤️
+
+</h2>
+
+<p>
+
+No matter where life takes us...
+
+No matter how many days pass...
+
+My heart will always choose you.
+
+Thank you for making my world brighter.
+
+Thank you for every smile.
+
+Thank you for simply being you.
+
+I promise to stand beside you,
+
+to support you,
+
+to respect you,
+
+and to love you with all my heart.
+
+Forever and always...
+
+❤️ I Love You ❤️
+
+</p>
+
+<button id="closeMessage">
+
+Close ❤️
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ==========================================
+PHOTO GALLERY
+========================================== -->
+
+<section class="card">
+
+<h2>
+
+📸 Our Beautiful Memories
+
+</h2>
+
+<div class="gallery">
+
+<div class="photo">
+
+<img src="{{ url_for('static', filename='images/photo1.jpg') }}" alt="Memory 1">
+
+</div>
+
+<div class="photo">
+
+<img src="{{ url_for('static', filename='images/photo2.jpg') }}" alt="Memory 2">
+
+</div>
+
+<div class="photo">
+
+<img src="{{ url_for('static', filename='images/photo3.jpg') }}" alt="Memory 3">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+REASONS I LOVE YOU
+========================================== -->
+
+<section class="card">
+
+<h2>
+
+🌹 Reasons I Love You
+
+</h2>
+
+<div class="reasonGrid">
+
+<div class="reason">
+
+❤️ Your beautiful smile
+
+</div>
+
+<div class="reason">
+
+😊 Your kindness
+
+</div>
+
+<div class="reason">
+
+🌸 Your caring heart
+
+</div>
+
+<div class="reason">
+
+✨ The happiness you bring me
+
+</div>
+
+<div class="reason">
+
+💖 Simply because you're Yusrah
+
+</div>
+
+<div class="reason">
+
+🌍 Because life is better with you
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+FOREVER PROMISE
+========================================== -->
+
+<section class="card promise">
+
+<h2>
+
+💍 My Forever Promise
+
+</h2>
+
+<p>
+
+I may not be perfect.
+
+I may not always have the right words.
+
+But one thing I promise...
+
+Every single day,
+
+I'll continue choosing you.
+
+Today...
+
+Tomorrow...
+
+Forever.
+
+❤️
+
+</p>
+
+</section>
+<!-- ==========================================
+FINAL LOVE MESSAGE
+========================================== -->
+
+<section class="card finalCard">
+
+<h2>✨ One Last Thing... ✨</h2>
+
+<p>
+
+Yusrah...
+
+If you have reached this point,
+
+it means you've travelled through my heart.
+
+Every animation,
+
+every flower,
+
+every heartbeat,
+
+every line of code...
+
+was made with love.
+
+No matter where life takes us,
+
+I will always pray for your happiness.
+
+Thank you for being the most beautiful chapter of my life.
+
+❤️
+
+</p>
+
+<h1 class="loveTitle">
+
+I LOVE YOU
+
+</h1>
+
+<h2 class="loveName">
+
+YUSRAH
+
+</h2>
+
+<p class="forever">
+
+Forever ♾️ & Always ❤️
+
+</p>
+
+</section>
+
+<!-- ==========================================
+EFFECT CONTAINERS
+========================================== -->
+
+<div id="fireworks"></div>
+
+<div id="roses"></div>
+
+<div id="butterflies"></div>
+
+<div id="petals"></div>
+
+<div id="confetti"></div>
+
+<div id="floatingHearts"></div>
+
+<div id="magicParticles"></div>
+
+<!-- ==========================================
+FOOTER
+========================================== -->
+
+<footer>
+
+Made with ❤️ only for
+
+<strong>Yusrah</strong>
+
+</footer>
+
+</div>
+
+<!-- ==========================================
+JAVASCRIPT
+========================================== -->
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
+
